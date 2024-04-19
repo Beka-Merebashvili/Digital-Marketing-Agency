@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/react-slick": "^0.23.13",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "data-uri-to-buffer": "^6.0.2",
@@ -17,7 +18,10 @@
     "next": "14.2.1",
     "react": "^18",
     "react-dom": "^18",
-    "shadcn-ui": "^0.8.0",
+    "react-responsive": "^10.0.0",
+    "react-slick": "^0.30.2",
+    "shadcn-ui": "^0.2.3",
+    "slick-carousel": "^1.8.1",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7"
   },
