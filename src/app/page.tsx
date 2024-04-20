@@ -2,7 +2,7 @@ import Navbar from "@/components/navbar";
 import SliderOne from "@/components/ui/slider";
 import { Spotlight } from "@/components/ui/spotlight";
 import Link from "next/link";
-import GraphicDesign from "./graphic-desing";
+import GraphicDesign from "./website-desing";
 
 
 export default function Home() {
