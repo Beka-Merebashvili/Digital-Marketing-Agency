@@ -2,7 +2,7 @@ import Navbar from "@/components/navbar";
 import SliderOne from "@/components/ui/slider";
 import { Spotlight } from "@/components/ui/spotlight";
 import Link from "next/link";
-import GraphicDesign from "./website-desing";
+import WebsiteDesign from "./website-desing";
 
 
 export default function Home() {
@@ -26,7 +26,7 @@ export default function Home() {
         </Link>
         <div className="w-full pt-20">
           <SliderOne />
-          <GraphicDesign />
+          <WebsiteDesign />
         </div>
       </div>
     </div>
