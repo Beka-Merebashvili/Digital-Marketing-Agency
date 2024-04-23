@@ -6,6 +6,7 @@ import WebsiteDesign from "./website-desing";
 import GraphicDesign from "./graphic-desing";
 import ShopifyStores from "./shopify-stores";
 import Brands from "./brands";
+import Services from "./services";
 
 
 export default function Home() {
@@ -33,6 +34,7 @@ export default function Home() {
           <GraphicDesign />
           <ShopifyStores />
           <Brands />
+          <Services />
         </div>
       </div>
     </div>
