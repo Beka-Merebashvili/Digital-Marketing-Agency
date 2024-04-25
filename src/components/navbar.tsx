@@ -13,7 +13,7 @@ interface NavbarProps {
   scrollToGraphicDesign: () => void;
   scrollToShopifyStores: () => void;
   scrollToBrands: () => void;
-  scrollToServices: () => void; // Define scrollToServices function
+  scrollToServices: () => void; 
 }
 
 const Navbar = ({
@@ -21,7 +21,7 @@ const Navbar = ({
   scrollToGraphicDesign,
   scrollToShopifyStores,
   scrollToBrands,
-  scrollToServices, // Add scrollToServices to props
+  scrollToServices, 
 }: NavbarProps) => {
   const [isDropDownVisible, setIsDropDownVisible] = useState(false);
 
@@ -77,7 +77,6 @@ const Navbar = ({
 
         <div className="flex md:hidden">
           {isDropDownVisible ? (
-            // display an x icon when the drop is visible
             <div
               onClick={toggleDropDown}
               className="w-8 h-8 text-slate-300 cursor-pointer"
@@ -103,9 +102,7 @@ const Navbar = ({
             rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] 
             bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors
              focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2
-              focus:ring-offset-slate-50
-
-            "
+            focus:ring-offset-slate-50"
           >
             Contact
           </Link>

@@ -51,7 +51,8 @@ export default function Home() {
         scrollToBrands={scrollToBrands}
         scrollToServices={scrollToServices}
       />
-      <Spotlight className="hidden md:flex md:-top-0 left-80  " fill="white" />
+
+      <Spotlight className="hidden md:flex md:-top-80 left-80  " fill="white" />
       <div className="p-4 mx-auto relative z-10 w-full pt-10 md:pt-20 px-2">
         <div className="text-4xl pb-5 md:text-7xl px-6 text-center  bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to bg-neutral-400 bg-opacity-50">
           Create, grow, and <br /> scale your business
@@ -67,12 +68,23 @@ export default function Home() {
         >
           Book a call
         </Link>
+
         <div className="w-full pt-20">
           <SliderOne />
+        </div>
+        <div ref={websiteDesignRef}>
           <WebsiteDesign />
+        </div>
+        <div ref={graphicDesignRef}>
           <GraphicDesign />
+        </div>
+        <div ref={shopifyStoresRef}>
           <ShopifyStores />
+        </div>
+        <div ref={brandsRef}>
           <Brands />
+        </div>
+        <div id="services">
           <Services />
         </div>
       </div>
