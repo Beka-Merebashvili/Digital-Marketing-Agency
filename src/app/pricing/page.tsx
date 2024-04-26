@@ -6,7 +6,7 @@ import Link from "next/link";
 
 import { PiCheckCircleFill } from "react-icons/pi";
 
-import Navbar from "@/components/navbar";
+import PricingNavbar from "@/components/pricing-navbar";
 
 const plans = [
   {
@@ -75,13 +75,7 @@ const Pricing = () => {
      bg-black/[0.96] antialiased 
      bg-grid-white/[0.02] relative overflow-hidden"
     >
-      <Navbar
-        scrollToWebsiteDesign={() => {}}
-        scrollToGraphicDesign={() => {}}
-        scrollToShopifyStores={() => {}}
-        scrollToBrands={() => {}}
-        scrollToServices={() => {}}
-      />
+      <PricingNavbar />
 
       <div className="flex items-center justify-center flex-col   ">
         <div className="text-5xl pb-10 md:pb-20 text-slate-300 px-6 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-500 bg-opacity-50">
