@@ -10,6 +10,7 @@ import ShopifyStores from "./shopify-stores";
 import Brands from "./brands";
 import Services from "./services";
 import { useRef } from "react";
+import FAQS from "./faq";
 
 export default function Home() {
   const websiteDesignRef = useRef<HTMLDivElement>(null);
@@ -87,6 +88,7 @@ export default function Home() {
         <div id="services">
           <Services />
         </div>
+        <FAQS />
       </div>
     </div>
   );
