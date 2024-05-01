@@ -155,169 +155,168 @@ export default function ContactForm() {
           </div>
         </div>
 
+        {/* <div className="bg-white py-4 px-3"></div> */}
+
         <Form {...form}>
           {!submitted ? (
-            <form
-              onSubmit={form.handleSubmit(onSubmit)}
-              className="
-            space-y-4 "
-            >
-              <div className="md:flex items-center gap-6 ">
-                <FormField
-                  control={form.control}
-                  name="first_name"
-                  render={({ field }) => (
-                    <FormItem className="items-center justify-center  w-full">
-                      <FormLabel className="text-sm ">First name *</FormLabel>
-                      <FormControl>
-                        <Input {...field} />
-                      </FormControl>
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="last_name"
-                  render={({ field }) => (
-                    <FormItem className="items-center justify-center  w-full">
-                      <FormLabel className="w-60 text-sm ">
-                        Last name *
-                      </FormLabel>
-                      <FormControl>
-                        <Input {...field} />
-                      </FormControl>
-                    </FormItem>
-                  )}
-                />
-              </div>
-
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem className="items-center justify-center  w-full">
-                    <FormLabel className=" text-sm   ">Work email *</FormLabel>
-                    <FormControl>
-                      <Input {...field} />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="company_name"
-                render={({ field }) => (
-                  <FormItem className="items-center justify-center  w-full">
-                    <FormLabel className="w-60 text-sm">
-                      Company name *
-                    </FormLabel>
-                    <FormControl>
-                      <Input {...field} />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                render={({ field }) => (
-                  <FormItem className="items-center justify-center w-full">
-                    <FormLabel className="w-60 text-sm ">
-                      Company size*
-                    </FormLabel>
-                    <Select onValueChange={field.onChange}>
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select an option" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <div className="flex gap-4">
-                          <SelectItem value="1-10">1-10</SelectItem>
-                        </div>
-                        <SelectItem value="11-50">11-50</SelectItem>
-                        <SelectItem value="51-200">51-200</SelectItem>
-                        <SelectItem value="501-1000">501-1000</SelectItem>
-                        <SelectItem value="1000+">1000+</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </FormItem>
-                )}
-                name={""}
-              />
-
-              <FormField
-                control={form.control}
-                name="help"
-                render={({ field }) => (
-                  <FormItem className="items-center justify-center  w-full">
-                    <FormLabel className="w-60 text-sm   ">
-                      How can we help ?
-                    </FormLabel>
-                    <Select
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                    >
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select an option" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <div className="flex gap-4">
-                          <SelectItem value="Evaluate Bird for my company">
-                            Evaluate Bird for my company
-                          </SelectItem>
-                        </div>
-                        <SelectItem value="Learn More">Learn More</SelectItem>
-                        <SelectItem value="Get a Quote">Get a Quote</SelectItem>
-                        <SelectItem value="How to use Bird">
-                          How to use Bird
-                        </SelectItem>
-                        <SelectItem value="Other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="info"
-                render={({ field }) => (
-                  <FormItem className="items-center justify-center w-full">
-                    <FormLabel className="w-60 text-sm   ">
-                      Anything else ?
-                    </FormLabel>
-                    <FormControl>
-                      <Textarea style={{ height: "100px" }} {...field} />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
-
-              <div className="flex gap-4 items-center">
-                <div>
-                  <Checkbox className="text-[#6c6684]" />
-                </div>
-                <div className="text-xs font-light  md:w-3/4 mb-1">
-                  I agree to Bird&apos; sending marketing communications related
-                  to bird
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <Button
-                  type="submit"
-                  className="text-sm font-light"
-                  disabled={loading}
-                  onClick={() => form.handleSubmit(onSubmit)}
-                >
-                  Submit
-                </Button>
-              </div>
-            </form>
+             <form
+             onSubmit={form.handleSubmit(onSubmit)}
+             className="space-y-4 h-full border rounded-3xl p-10 md:w-1/3 "
+           >
+             <div className="md:flex items-center gap-6 ">
+               <FormField
+                 control={form.control}
+                 name="first_name"
+                 render={({ field }) => (
+                   <FormItem className="items-center justify-center  w-full">
+                     <FormLabel className="text-sm ">First name *</FormLabel>
+                     <FormControl>
+                       <Input {...field} />
+                     </FormControl>
+                   </FormItem>
+                 )}
+               />
+ 
+               <FormField
+                 control={form.control}
+                 name="last_name"
+                 render={({ field }) => (
+                   <FormItem className="items-center justify-center  w-full">
+                     <FormLabel className="w-60 text-sm ">Last name *</FormLabel>
+                     <FormControl>
+                       <Input {...field} />
+                     </FormControl>
+                   </FormItem>
+                 )}
+               />
+             </div>
+ 
+             <FormField
+               control={form.control}
+               name="email"
+               render={({ field }) => (
+                 <FormItem className="items-center justify-center  w-full">
+                   <FormLabel className=" text-sm   ">Work email *</FormLabel>
+                   <FormControl>
+                     <Input {...field} />
+                   </FormControl>
+                 </FormItem>
+               )}
+             />
+ 
+             <FormField
+               control={form.control}
+               name="company_name"
+               render={({ field }) => (
+                 <FormItem className="items-center justify-center  w-full">
+                   <FormLabel className="w-60 text-sm">Company name *</FormLabel>
+                   <FormControl>
+                     <Input {...field} />
+                   </FormControl>
+                 </FormItem>
+               )}
+             />
+ 
+             <FormField
+               control={form.control}
+               name="job_title"
+               render={({ field }) => (
+                 <FormItem className="items-center justify-center w-full">
+                   <FormLabel className="w-60 text-sm ">Company size*</FormLabel>
+                   <Select
+                     onValueChange={field.onChange}
+                   >
+                     <FormControl>
+                       <SelectTrigger>
+                         <SelectValue placeholder="Select an option" />
+                       </SelectTrigger>
+                     </FormControl>
+                     <SelectContent>
+                       <div className="flex gap-4">
+                         <SelectItem value="1-10">1-10</SelectItem>
+                       </div>
+                       <SelectItem value="11-50">11-50</SelectItem>
+                       <SelectItem value="51-200">51-200</SelectItem>
+                       <SelectItem value="501-1000">501-1000</SelectItem>
+                       <SelectItem value="1000+">1000+</SelectItem>
+                     </SelectContent>
+                   </Select>
+                 </FormItem>
+               )}
+             />
+ 
+             <FormField
+               control={form.control}
+               name="help"
+               render={({ field }) => (
+                 <FormItem className="items-center justify-center  w-full">
+                   <FormLabel className="w-60 text-sm   ">
+                     How can we help ?
+                   </FormLabel>
+                   <Select
+                     onValueChange={field.onChange}
+                     defaultValue={field.value}
+                   >
+                     <FormControl>
+                       <SelectTrigger>
+                         <SelectValue placeholder="Select an option" />
+                       </SelectTrigger>
+                     </FormControl>
+                     <SelectContent>
+                       <div className="flex gap-4">
+                         <SelectItem value="Evaluate Bird for my company">
+                           Evaluate Bird for my company
+                         </SelectItem>
+                       </div>
+                       <SelectItem value="Learn More">Learn More</SelectItem>
+                       <SelectItem value="Get a Quote">Get a Quote</SelectItem>
+                       <SelectItem value="How to use Bird">
+                         How to use Bird
+                       </SelectItem>
+                       <SelectItem value="Other">Other</SelectItem>
+                     </SelectContent>
+                   </Select>
+                 </FormItem>
+               )}
+             />
+ 
+             <FormField
+               control={form.control}
+               name="info"
+               render={({ field }) => (
+                 <FormItem className="items-center justify-center w-full">
+                   <FormLabel className="w-60 text-sm   ">
+                     Anything else ?
+                   </FormLabel>
+                   <FormControl>
+                     <Textarea style={{ height: "100px" }} {...field} />
+                   </FormControl>
+                 </FormItem>
+               )}
+             />
+ 
+             <div className="flex gap-4 items-center">
+               <div>
+                 <Checkbox className="text-[#6c6684]" />
+               </div>
+               <div className="text-white font-light  md:w-3/4 mb-1">
+                 I agree to Bird&apos; sending marketing communications related
+                 to bird
+               </div>
+             </div>
+ 
+             <div className="flex items-center gap-4">
+               <Button
+                 type="submit"
+                 className="bg-white text-sm font-light"
+                 disabled={loading}
+                 variant="secondary"
+                 onClick={() => form.handleSubmit(onSubmit)}
+               >
+                 Submit
+               </Button>
+             </div>
+           </form>
           ) : (
             <>
               <div className="text-xl  md:text-2xl  flex  items-center justify-center flex-col px-8">
@@ -333,6 +332,8 @@ export default function ContactForm() {
             </>
           )}
         </Form>
+
+        
       </div>
     </div>
   );
