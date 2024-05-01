@@ -122,15 +122,13 @@ export default function ContactForm() {
 
   return (
     <div className=" w-full   md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden ">
-      <PricingNavbar/>
+      <PricingNavbar />
       <div className="md:flex items-start justify-center md:py-20 px-6">
         <div className="">
           <div className="text-5xl font-medium  w-full md:w-2/3  pb-5 md:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
             Contact our sales team
           </div>
-          <div
-            className=" py-4 text-gray-300 "
-          >
+          <div className=" py-4 text-gray-300 ">
             Let&apos;s talk about how Bird can help your team work better.
           </div>
 
@@ -162,10 +160,7 @@ export default function ContactForm() {
             <form
               onSubmit={form.handleSubmit(onSubmit)}
               className="
-            space-y-4
-            h-full
-            border rounded-3xl p-10
-            md:w-1/3 "
+            space-y-4 "
             >
               <div className="md:flex items-center gap-6 ">
                 <FormField
@@ -173,9 +168,7 @@ export default function ContactForm() {
                   name="first_name"
                   render={({ field }) => (
                     <FormItem className="items-center justify-center  w-full">
-                      <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                        First name *
-                      </FormLabel>
+                      <FormLabel className="text-sm ">First name *</FormLabel>
                       <FormControl>
                         <Input {...field} />
                       </FormControl>
@@ -188,7 +181,7 @@ export default function ContactForm() {
                   name="last_name"
                   render={({ field }) => (
                     <FormItem className="items-center justify-center  w-full">
-                      <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+                      <FormLabel className="w-60 text-sm ">
                         Last name *
                       </FormLabel>
                       <FormControl>
@@ -204,9 +197,7 @@ export default function ContactForm() {
                 name="email"
                 render={({ field }) => (
                   <FormItem className="items-center justify-center  w-full">
-                    <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                      Email *
-                    </FormLabel>
+                    <FormLabel className=" text-sm   ">Work email *</FormLabel>
                     <FormControl>
                       <Input {...field} />
                     </FormControl>
@@ -219,8 +210,8 @@ export default function ContactForm() {
                 name="company_name"
                 render={({ field }) => (
                   <FormItem className="items-center justify-center  w-full">
-                    <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                      Company name?
+                    <FormLabel className="w-60 text-sm">
+                      Company name *
                     </FormLabel>
                     <FormControl>
                       <Input {...field} />
@@ -230,12 +221,39 @@ export default function ContactForm() {
               />
 
               <FormField
-                control={form.control}
-                name="services"
                 render={({ field }) => (
                   <FormItem className="items-center justify-center w-full">
-                    <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                    Services you are interested in
+                    <FormLabel className="w-60 text-sm ">
+                      Company size*
+                    </FormLabel>
+                    <Select onValueChange={field.onChange}>
+                      <FormControl>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select an option" />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        <div className="flex gap-4">
+                          <SelectItem value="1-10">1-10</SelectItem>
+                        </div>
+                        <SelectItem value="11-50">11-50</SelectItem>
+                        <SelectItem value="51-200">51-200</SelectItem>
+                        <SelectItem value="501-1000">501-1000</SelectItem>
+                        <SelectItem value="1000+">1000+</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </FormItem>
+                )}
+                name={""}
+              />
+
+              <FormField
+                control={form.control}
+                name="help"
+                render={({ field }) => (
+                  <FormItem className="items-center justify-center  w-full">
+                    <FormLabel className="w-60 text-sm   ">
+                      How can we help ?
                     </FormLabel>
                     <Select
                       onValueChange={field.onChange}
@@ -248,47 +266,15 @@ export default function ContactForm() {
                       </FormControl>
                       <SelectContent>
                         <div className="flex gap-4">
-                          <SelectItem value="Mobile App Develoment">
-                          Mobile App Develoment
-                          </SelectItem>
-                        </div>
-                        <SelectItem value="Social Media Marketing">Social Media Marketing</SelectItem>
-                        <SelectItem value="51-200">51-200</SelectItem>
-                        <SelectItem value="501-1000">501-1000</SelectItem>
-                        <SelectItem value="1000+">1000+</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="help"
-                render={({ field }) => (
-                  <FormItem className="items-center justify-center  w-full">
-                    <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                      How can we help ?
-                    </FormLabel>
-                    <Select
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                    >
-                      <FormControl>
-                        <SelectTrigger 
-                        >
-                          <SelectValue placeholder="Select an option" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <div className="flex gap-4">
                           <SelectItem value="Evaluate Bird for my company">
                             Evaluate Bird for my company
                           </SelectItem>
                         </div>
                         <SelectItem value="Learn More">Learn More</SelectItem>
                         <SelectItem value="Get a Quote">Get a Quote</SelectItem>
-
+                        <SelectItem value="How to use Bird">
+                          How to use Bird
+                        </SelectItem>
                         <SelectItem value="Other">Other</SelectItem>
                       </SelectContent>
                     </Select>
@@ -301,7 +287,7 @@ export default function ContactForm() {
                 name="info"
                 render={({ field }) => (
                   <FormItem className="items-center justify-center w-full">
-                    <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+                    <FormLabel className="w-60 text-sm   ">
                       Anything else ?
                     </FormLabel>
                     <FormControl>
@@ -313,17 +299,9 @@ export default function ContactForm() {
 
               <div className="flex gap-4 items-center">
                 <div>
-                  <Checkbox
-                    className="
-                outline
-                border-2
-                text-sm
-                font-light
-                bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400
-                "
-                  />
+                  <Checkbox className="text-[#6c6684]" />
                 </div>
-                <div className="text-xs font-light  md:w-3/4 mb-1 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
+                <div className="text-xs font-light  md:w-3/4 mb-1">
                   I agree to Bird&apos; sending marketing communications related
                   to bird
                 </div>
@@ -332,7 +310,7 @@ export default function ContactForm() {
               <div className="flex items-center gap-4">
                 <Button
                   type="submit"
-                  className=" text-sm font-light"
+                  className="text-sm font-light"
                   disabled={loading}
                   onClick={() => form.handleSubmit(onSubmit)}
                 >
@@ -342,16 +320,7 @@ export default function ContactForm() {
             </form>
           ) : (
             <>
-              <div
-                className="
-        text-xl    
-        md:text-2xl 
-        flex 
-        items-center
-        justify-center
-        flex-col
-        px-8 "
-              >
+              <div className="text-xl  md:text-2xl  flex  items-center justify-center flex-col px-8">
                 <div className="w-80 py-20">
                   <PiSmiley className="text-6xl text-[#6c6684] mx-auto" />
 
