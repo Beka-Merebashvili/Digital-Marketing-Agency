@@ -161,7 +161,7 @@ export default function ContactForm() {
           {!submitted ? (
              <form
              onSubmit={form.handleSubmit(onSubmit)}
-             className="space-y-4 h-full border rounded-3xl p-10 md:w-1/3 "
+             className="space-y-4 h-full border rounded-3xl p-10 md:w-1/3"
            >
              <div className="md:flex items-center gap-6 ">
                <FormField
@@ -171,12 +171,12 @@ export default function ContactForm() {
                    <FormItem className="items-center justify-center  w-full">
                      <FormLabel className="text-sm ">First name *</FormLabel>
                      <FormControl>
-                       <Input {...field} />
+                       <Input {...field} required />
                      </FormControl>
                    </FormItem>
                  )}
                />
- 
+           
                <FormField
                  control={form.control}
                  name="last_name"
@@ -184,13 +184,13 @@ export default function ContactForm() {
                    <FormItem className="items-center justify-center  w-full">
                      <FormLabel className="w-60 text-sm ">Last name *</FormLabel>
                      <FormControl>
-                       <Input {...field} />
+                       <Input {...field} required />
                      </FormControl>
                    </FormItem>
                  )}
                />
              </div>
- 
+           
              <FormField
                control={form.control}
                name="email"
@@ -198,12 +198,12 @@ export default function ContactForm() {
                  <FormItem className="items-center justify-center  w-full">
                    <FormLabel className=" text-sm   ">Work email *</FormLabel>
                    <FormControl>
-                     <Input {...field} />
+                     <Input {...field}/>
                    </FormControl>
                  </FormItem>
                )}
              />
- 
+           
              <FormField
                control={form.control}
                name="company_name"
@@ -211,21 +211,19 @@ export default function ContactForm() {
                  <FormItem className="items-center justify-center  w-full">
                    <FormLabel className="w-60 text-sm">Company name *</FormLabel>
                    <FormControl>
-                     <Input {...field} />
+                     <Input {...field} required />
                    </FormControl>
                  </FormItem>
                )}
              />
- 
+           
              <FormField
                control={form.control}
                name="job_title"
                render={({ field }) => (
                  <FormItem className="items-center justify-center w-full">
-                   <FormLabel className="w-60 text-sm ">Company size*</FormLabel>
-                   <Select
-                     onValueChange={field.onChange}
-                   >
+                   <FormLabel className="w-60 text-sm ">Services you are interested in*</FormLabel>
+                   <Select onValueChange={field.onChange}>
                      <FormControl>
                        <SelectTrigger>
                          <SelectValue placeholder="Select an option" />
@@ -233,18 +231,18 @@ export default function ContactForm() {
                      </FormControl>
                      <SelectContent>
                        <div className="flex gap-4">
-                         <SelectItem value="1-10">1-10</SelectItem>
+                         <SelectItem value="Mobile app development">Mobile app development</SelectItem>
                        </div>
-                       <SelectItem value="11-50">11-50</SelectItem>
-                       <SelectItem value="51-200">51-200</SelectItem>
-                       <SelectItem value="501-1000">501-1000</SelectItem>
-                       <SelectItem value="1000+">1000+</SelectItem>
+                       <SelectItem value="Web development">Web development</SelectItem>
+                       <SelectItem value="Social media marketing">Social media marketing</SelectItem>
+                       <SelectItem value="Marketing">Marketing</SelectItem>
+                       <SelectItem value="Project managment">Project managment</SelectItem>
                      </SelectContent>
                    </Select>
                  </FormItem>
                )}
              />
- 
+           
              <FormField
                control={form.control}
                name="help"
@@ -253,10 +251,7 @@ export default function ContactForm() {
                    <FormLabel className="w-60 text-sm   ">
                      How can we help ?
                    </FormLabel>
-                   <Select
-                     onValueChange={field.onChange}
-                     defaultValue={field.value}
-                   >
+                   <Select onValueChange={field.onChange} defaultValue={field.value} required>
                      <FormControl>
                        <SelectTrigger>
                          <SelectValue placeholder="Select an option" />
@@ -264,14 +259,14 @@ export default function ContactForm() {
                      </FormControl>
                      <SelectContent>
                        <div className="flex gap-4">
-                         <SelectItem value="Evaluate Bird for my company">
-                           Evaluate Bird for my company
+                         <SelectItem value="Evaluate app for my company">
+                           Evaluate app for my company
                          </SelectItem>
                        </div>
                        <SelectItem value="Learn More">Learn More</SelectItem>
                        <SelectItem value="Get a Quote">Get a Quote</SelectItem>
-                       <SelectItem value="How to use Bird">
-                         How to use Bird
+                       <SelectItem value="How to use">
+                         How to use
                        </SelectItem>
                        <SelectItem value="Other">Other</SelectItem>
                      </SelectContent>
@@ -279,7 +274,7 @@ export default function ContactForm() {
                  </FormItem>
                )}
              />
- 
+           
              <FormField
                control={form.control}
                name="info"
@@ -289,22 +284,22 @@ export default function ContactForm() {
                      Anything else ?
                    </FormLabel>
                    <FormControl>
-                     <Textarea style={{ height: "100px" }} {...field} />
+                     <Textarea style={{ height: "100px" }} {...field}/>
                    </FormControl>
                  </FormItem>
                )}
              />
- 
+           
              <div className="flex gap-4 items-center">
                <div>
-                 <Checkbox className="text-[#6c6684]" />
+                 <Checkbox className="text-[#6c6684]" required />
                </div>
                <div className="text-white font-light  md:w-3/4 mb-1">
                  I agree to Bird&apos; sending marketing communications related
                  to bird
                </div>
              </div>
- 
+           
              <div className="flex items-center gap-4">
                <Button
                  type="submit"
@@ -317,13 +312,14 @@ export default function ContactForm() {
                </Button>
              </div>
            </form>
+           
           ) : (
             <>
               <div className="text-xl  md:text-2xl  flex  items-center justify-center flex-col px-8">
                 <div className="w-80 py-20">
                   <PiSmiley className="text-6xl text-[#6c6684] mx-auto" />
 
-                  <div className="text-gray-500 font-light  text-center justify-center mx-auto py-10">
+                  <div className="text-gray-500 font-light  text-center justify-center mx-auto py-10 h-screen">
                     We&apos;ve received your inquiry and will be contacting you
                     via email shortly.
                   </div>
